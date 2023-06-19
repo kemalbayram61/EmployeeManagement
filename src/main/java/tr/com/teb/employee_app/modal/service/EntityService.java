@@ -2,14 +2,14 @@ package tr.com.teb.employee_app.modal.service;
 
 import java.util.List;
 
-public interface EntityService<T, ID> {
-    T findByID(ID id);
+public interface EntityService<T, I> {
+    T findByID(I id);
 
     T update(T object);
 
-    boolean deleteByID(ID id);
+    T deleteByID(I id);
 
     List<T> getAll();
 
-    boolean insert(T object);
+    T insert(T object);
 }
