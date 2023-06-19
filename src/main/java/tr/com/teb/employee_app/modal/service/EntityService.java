@@ -7,7 +7,7 @@ public interface EntityService<T, I> {
 
     T update(T object);
 
-    T deleteByID(I id);
+    void deleteByID(I id);
 
     List<T> getAll();
 
