@@ -1,12 +1,13 @@
 package tr.com.teb.employee_app.modal.entity;
 
-import lombok.Builder;
-import lombok.Getter;
-import lombok.Setter;
+import lombok.*;
 
 import javax.persistence.*;
 import java.util.Date;
 
+@SequenceGenerator(name = "EMPLOYEE_SEQUENCE", sequenceName = "EMPLOYEES_SEQ", initialValue = 1, allocationSize = 1)
+@EqualsAndHashCode
+@ToString
 @Builder
 @Getter
 @Setter
@@ -14,6 +15,7 @@ import java.util.Date;
 @Table(name = "EMPLOYEES")
 public class Employee {
 
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "EMPLOYEE_SEQUENCE")
     @Id
     @Column(name = "EMPLOYEE_ID")
     private int employeeID;
