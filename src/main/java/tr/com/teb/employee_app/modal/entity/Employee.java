@@ -6,11 +6,7 @@ import javax.persistence.*;
 import java.util.Date;
 
 @SequenceGenerator(name = "EMPLOYEE_SEQUENCE", sequenceName = "EMPLOYEES_SEQ", initialValue = 1, allocationSize = 1)
-@EqualsAndHashCode
-@ToString
-@Builder
-@Getter
-@Setter
+@Data
 @Entity
 @Table(name = "EMPLOYEES")
 public class Employee {
