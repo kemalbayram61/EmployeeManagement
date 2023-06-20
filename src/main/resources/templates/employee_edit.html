@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>Employee Editing</title>
+  <link th:href="@{css/general_template.css}" rel="stylesheet">
+</head>
+<body>
+<div align="center">
+  <h1>Employee management - Editing Page</h1>
+  <form action="#" th:action="@{/edit/employee}" th:object="${employee}" method="post">
+    <table>
+      <tr>
+        <td>Employee ID</td>
+        <td><input type="text" th:field="*{employeeID}"></td>
+      </tr>
+      <tr>
+        <td>First Name</td>
+        <td><input type="text" th:field="*{firstName}"></td>
+      </tr>
+      <tr>
+        <td>Last Name</td>
+        <td><input type="text" th:field="*{lastName}"></td>
+      </tr>
+      <tr>
+        <td>Salary</td>
+        <td><input type="number" th:field="*{salary}"></td>
+      </tr>
+      <tr>
+        <td><button type="submit">Submit</button></td>
+      </tr>
+    </table>
+  </form>
+</div>
+</body>
+</html>

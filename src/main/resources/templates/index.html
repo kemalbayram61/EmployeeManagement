@@ -22,6 +22,7 @@
                     <th>Last Name</th>
                     <th>Hire Date</th>
                     <th>Salary</th>
+                    <th>Operations</th>
                 </tr>
             </thead>
             <tbody>
@@ -31,6 +32,10 @@
                     <td th:text = "${employee.lastName}">Last Name</td>
                     <td th:text = "${employee.hireDate}">Hire Date</td>
                     <td th:text = "${employee.salary}">Salary</td>
+                    <td>
+                        <a th:href="@{'show/employee-editing/' + ${employee.employeeID}}">Edit</a>
+                        <a th:href="@{'delete/employee/' + ${employee.employeeID}}">Delete</a>
+                    </td>
                 </tr>
             </tbody>
         </table>
