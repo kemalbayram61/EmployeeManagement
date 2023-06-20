@@ -1,11 +1,13 @@
 package tr.com.teb.employee_app.modal.service;
 
 import org.springframework.dao.OptimisticLockingFailureException;
+import org.springframework.stereotype.Service;
 import tr.com.teb.employee_app.modal.entity.Employee;
 import tr.com.teb.employee_app.utility.Util;
 
 import java.util.List;
 
+@Service
 public class EmployeeService extends AbstractEmployeeService{
     @Override
     protected List<Employee> findBySalaryGreaterThanEqual(double salary) {
