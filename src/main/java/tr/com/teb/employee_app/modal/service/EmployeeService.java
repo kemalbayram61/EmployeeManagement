@@ -5,6 +5,7 @@ import tr.com.teb.employee_app.modal.entity.Employee;
 import tr.com.teb.employee_app.utility.Util;
 
 import java.util.List;
+import java.util.function.Supplier;
 
 public class EmployeeService extends AbstractEmployeeService{
     @Override
@@ -33,10 +34,14 @@ public class EmployeeService extends AbstractEmployeeService{
 
     @Override
     public Employee findByID(Integer id) {
-        try{
-            return employeeRepository.findById(id).get();
+        try {
+            return employeeRepository.findById(id).orElseThrow(() -> new RuntimeException("Entity is not found."));
+        }catch (NullPointerException nullPointerException){
+            Util.showGeneralException(nullPointerException);
         }catch (IllegalArgumentException illegalArgumentException){
             Util.showGeneralException(illegalArgumentException);
+        }catch (RuntimeException runtimeException){
+            Util.showGeneralException(runtimeException);
         }catch (Exception exception){
             Util.showGeneralException(exception);
         }
@@ -45,7 +50,14 @@ public class EmployeeService extends AbstractEmployeeService{
 
     @Override
     public Employee update(Employee object) {
-        return this.insert(object);
+        Employee employeeFound = this.findByID(object.getEmployeeID());
+        if(employeeFound != null)
+        {
+            employeeFound.setFirstName(object.getFirstName() != null ? object.getFirstName() : employeeFound.getFirstName());
+            employeeFound.setLastName(object.getLastName() != null ? object.getLastName() : employeeFound.getLastName());
+            employeeFound.setSalary(object.getSalary() < 0 ? object.getSalary() : employeeFound.getSalary());
+        }
+        return this.insert(employeeFound);
     }
 
     @Override
