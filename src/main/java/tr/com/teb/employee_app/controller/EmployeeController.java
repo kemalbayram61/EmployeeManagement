@@ -1,4 +1,8 @@
 package tr.com.teb.employee_app.controller;
 
+import org.springframework.stereotype.Controller;
+
+@Controller
 public class EmployeeController {
+
 }
