@@ -5,7 +5,6 @@ import tr.com.teb.employee_app.modal.entity.Employee;
 import tr.com.teb.employee_app.utility.Util;
 
 import java.util.List;
-import java.util.function.Supplier;
 
 public class EmployeeService extends AbstractEmployeeService{
     @Override
