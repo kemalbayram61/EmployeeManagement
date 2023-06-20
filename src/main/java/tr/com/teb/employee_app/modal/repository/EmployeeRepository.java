@@ -11,5 +11,5 @@ public interface EmployeeRepository extends JpaRepository<Employee, Integer> {
     List<Employee> findBySalaryGreaterThanEqual(double salary);
 
     // SELECT * FROM EMPLOYEE WHERE SALARY > ?
-    List<Employee> findBySalaryGraterThan(double salary);
+    List<Employee> findBySalaryGreaterThan(double salary);
 }

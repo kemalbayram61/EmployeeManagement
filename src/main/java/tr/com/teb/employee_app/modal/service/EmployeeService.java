@@ -24,7 +24,7 @@ public class EmployeeService extends AbstractEmployeeService{
     @Override
     protected List<Employee> findBySalaryGreaterThan(double salary) {
         try{
-            return employeeRepository.findBySalaryGraterThan(salary);
+            return employeeRepository.findBySalaryGreaterThan(salary);
         }catch (IllegalArgumentException illegalArgumentException){
             Util.showGeneralException(illegalArgumentException);
         }catch (Exception exception){
