@@ -1,4 +1,4 @@
-package tr.com.teb.employee_app.modal.entity;
+package tr.com.example.employee_app.modal.entity;
 
 import lombok.*;
 

@@ -1,4 +1,4 @@
-package tr.com.teb.employee_app.modal.service;
+package tr.com.example.employee_app.modal.service;
 
 import java.util.List;
 

@@ -1,4 +1,4 @@
-package tr.com.teb.employee_app.utility;
+package tr.com.example.employee_app.utility;
 
 public final class Util
 {

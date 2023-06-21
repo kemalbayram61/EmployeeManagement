@@ -1,7 +1,7 @@
-package tr.com.teb.employee_app.modal.repository;
+package tr.com.example.employee_app.modal.repository;
 
 import org.springframework.data.jpa.repository.JpaRepository;
-import tr.com.teb.employee_app.modal.entity.Employee;
+import tr.com.example.employee_app.modal.entity.Employee;
 
 import java.util.List;
 

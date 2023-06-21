@@ -1,8 +1,8 @@
-package tr.com.teb.employee_app.modal.service;
+package tr.com.example.employee_app.modal.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import tr.com.teb.employee_app.modal.entity.Employee;
-import tr.com.teb.employee_app.modal.repository.EmployeeRepository;
+import tr.com.example.employee_app.modal.entity.Employee;
+import tr.com.example.employee_app.modal.repository.EmployeeRepository;
 
 import java.util.List;
 
