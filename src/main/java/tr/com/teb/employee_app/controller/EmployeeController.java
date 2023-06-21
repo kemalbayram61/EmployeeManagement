@@ -5,6 +5,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.servlet.ModelAndView;
 import tr.com.teb.employee_app.modal.entity.Employee;
 import tr.com.teb.employee_app.modal.service.AbstractEmployeeService;
 
@@ -43,11 +44,19 @@ public class EmployeeController {
         return "redirect:/";
     }
 
+    //@RequestMapping("/show/employee-editing/{employeeID}")
+    //public String showEmployeeEditing(@PathVariable(value = "employeeID") Integer employeeID, Model model){
+    //  Employee employee = employeeService.findByID(employeeID);
+    //  model.addAttribute("employee", employee);
+    //  return "employee_edit";
+    //}
+
     @RequestMapping("/show/employee-editing/{employeeID}")
-    public String showEmployeeEditing(@PathVariable(value = "employeeID") Integer employeeID, Model model){
+    public ModelAndView showEmployeeEditing(@PathVariable(value = "employeeID") Integer employeeID){
+        ModelAndView modelAndView = new ModelAndView("employee_edit");
         Employee employee = employeeService.findByID(employeeID);
-        model.addAttribute("employee", employee);
-        return "employee_edit";
+        modelAndView.addObject("employee", employee);
+        return modelAndView;
     }
 
     @RequestMapping("/edit/employee")
