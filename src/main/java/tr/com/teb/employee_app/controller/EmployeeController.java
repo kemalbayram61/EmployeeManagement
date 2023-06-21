@@ -7,6 +7,8 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import tr.com.teb.employee_app.modal.entity.Employee;
 import tr.com.teb.employee_app.modal.service.AbstractEmployeeService;
+
+import java.util.Date;
 import java.util.List;
 
 @Controller
@@ -30,6 +32,7 @@ public class EmployeeController {
 
     @RequestMapping("/register/employee")
     public String registerEmployee(Employee employee){
+        employee.setHireDate(new Date());
         employeeService.insert(employee);
         return "redirect:/";
     }

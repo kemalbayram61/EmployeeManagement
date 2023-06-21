@@ -86,8 +86,6 @@ public class EmployeeService extends AbstractEmployeeService{
     @Override
     public Employee insert(Employee object) {
         try{
-            if(object.getEmployeeID() <= 0)
-                object.setHireDate(new Date());
             return employeeRepository.save(object);
         }catch (IllegalArgumentException illegalArgumentException)
         {
